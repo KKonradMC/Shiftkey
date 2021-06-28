@@ -29,6 +29,14 @@ deps.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
 deps.material = "com.google.android.material:material:$versions.material"
 deps.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
 
+//hilt
+versions.hilt = '2.35'
+versions.hilt_androidx = '1.0.0'
+
+classpath.hilt = "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
+deps.hilt = "com.google.dagger:hilt-android:$versions.hilt"
+deps.hilt_compiler = "com.google.dagger:hilt-android-compiler:$versions.hilt"
+
 //tests
 versions.junit = "4.12"
 versions.junit_ext = "1.1.2"

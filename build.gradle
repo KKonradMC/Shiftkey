@@ -4,6 +4,7 @@ buildscript {
     fillRepository(repositories)
     dependencies {
         classpath(
+                classpath.hilt,
                 classpath.buildtools,
                 classpath.kotlin,
         )
