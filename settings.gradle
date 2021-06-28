@@ -1,2 +1,5 @@
 include ':app'
 rootProject.name = "Coding Challenge"
+include ':presentation'
+include ':domain'
+include ':data'

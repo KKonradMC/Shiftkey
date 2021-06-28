@@ -1,0 +1,51 @@
+def sdk = [:]
+sdk.compile = 30
+sdk.min = 23
+sdk.target = 30
+ext.sdk = sdk
+
+def versions = [:]
+def deps = [:]
+deps.tests = [:]
+def classpath = [:]
+
+//buildtools
+versions.buildtools = "4.1.2"
+classpath.buildtools = "com.android.tools.build:gradle:$versions.buildtools"
+
+//kotlin
+versions.kotlin = "1.4.30"
+classpath.kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+deps.kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+
+//androidx
+versions.core_ktx = "1.5.0"
+versions.appcompat = "1.2.0"
+versions.material = "1.3.0"
+versions.constraintlayout = "2.0.4"
+
+deps.core_ktx = "androidx.core:core-ktx:$versions.core_ktx"
+deps.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+deps.material = "com.google.android.material:material:$versions.material"
+deps.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+//tests
+versions.junit = "4.12"
+versions.junit_ext = "1.1.2"
+versions.espresso = "3.3.0"
+
+deps.tests.junit = "junit:junit:$versions.junit"
+deps.tests.junit_ext = "androidx.test.ext:junit:$versions.junit_ext"
+deps.tests.espresso = "androidx.test.espresso:espresso-core:$versions.espresso"
+
+
+ext.deps = deps
+ext.classpath = classpath
+
+static def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.mavenCentral()
+}
+
+ext.fillRepository = this.&addRepos
