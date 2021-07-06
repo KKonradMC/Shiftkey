@@ -37,6 +37,9 @@ dependencies {
     implementation(
             deps.kotlin,
             deps.hilt,
+            deps.rxandroid,
+            deps.rxkotlin,
+            deps.rxjava,
     )
     kapt(
             deps.hilt_compiler,

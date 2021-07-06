@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.shiftkey.codingchallenge.presentation.details.viewmodel.DetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_small">
+
+        <TextView
+            android:id="@+id/shift_id"
+            style="@style/TextStyle.Big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text="@{@string/id}"
+            app:param="@{vm.shiftId}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Id: 23390" />
+
+        <TextView
+            android:id="@+id/shift_label"
+            style="@style/TextStyle.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shift"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shift_id"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/premium_rate"
+            style="@style/TextStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/premium_rate"
+            android:checked="@{vm.premiumRate}"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shift_label"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/covid"
+            style="@style/TextStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/covid"
+            android:checked="@{vm.covid}"
+            android:enabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/premium_rate"/>
+
+        <TextView
+            android:id="@+id/shift_type"
+            style="@style/TextStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.shiftKind}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/covid"
+            tools:text="Evening Shift" />
+
+        <TextView
+            android:id="@+id/localization"
+            style="@style/TextStyle.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/localization"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shift_type"/>
+
+        <TextView
+            android:id="@+id/localized_name"
+            style="@style/TextStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.localizedName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/localization"
+            tools:text="Certified Medication Aide" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="@+id/localized_name"
+            app:layout_constraintBottom_toBottomOf="@+id/localized_name"
+            app:layout_constraintStart_toEndOf="@+id/localized_name"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:backgroundColor="@{vm.localizedColor}"
+            tools:background="@color/cardview_light_background"/>
+
+        <TextView
+            android:id="@+id/facility_type"
+            style="@style/TextStyle.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/facility_type"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/localized_name"/>
+
+        <TextView
+            android:id="@+id/facility_type_name"
+            style="@style/TextStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{vm.facilityTypeName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/facility_type"
+            tools:text="Skilled Nursing Facility" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="@+id/facility_type_name"
+            app:layout_constraintBottom_toBottomOf="@+id/facility_type_name"
+            app:layout_constraintStart_toEndOf="@+id/facility_type_name"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:backgroundColor="@{vm.facilityTypeColor}"
+            tools:background="@color/cardview_light_background"/>
+
+        <TextView
+            android:id="@+id/skill"
+            style="@style/TextStyle.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/skill"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/facility_type_name"/>
+
+        <TextView
+            android:id="@+id/skill_name"
+            style="@style/TextStyle.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.skillName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skill"
+            tools:text="Long Term Care" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="@+id/skill_name"
+            app:layout_constraintBottom_toBottomOf="@+id/skill_name"
+            app:layout_constraintStart_toEndOf="@+id/skill_name"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:backgroundColor="@{vm.skillColor}"
+            tools:background="@color/cardview_light_background"/>
+
+        <TextView
+            android:id="@+id/start_date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="@string/start_date"
+            app:layout_constraintBottom_toTopOf="@+id/end_date_label"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:text="@{vm.startTime}"
+            app:layout_constraintBottom_toTopOf="@+id/end_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="2021-07-07T03:00:00+00:00" />
+
+        <TextView
+            android:id="@+id/end_date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/end_date"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@{vm.endTime}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="2021-07-07T03:00:00+00:00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

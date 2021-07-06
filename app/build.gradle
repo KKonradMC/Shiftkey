@@ -44,6 +44,7 @@ dependencies {
             deps.constraintlayout,
             deps.material,
             deps.hilt,
+            deps.okhttp3,
     )
     kapt(
             deps.hilt_compiler,

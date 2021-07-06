@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -41,8 +42,13 @@ dependencies {
             deps.constraintlayout,
             deps.material,
             deps.hilt,
+            deps.rxandroid,
+            deps.rxkotlin,
+            deps.rxjava,
+            deps.navigation_fragment_ktx,
+            deps.navigation_ui_ktx,
     )
-    kapt (
+    kapt(
             deps.hilt_compiler,
     )
     testImplementation(

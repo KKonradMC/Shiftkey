@@ -16,12 +16,12 @@ To start working on the challenge, clone this repo onto your development machine
 
 ### Requirements ###
 
-* Written in Kotlin
-* Fetches available shifts using the [Available Shifts API](https://bitbucket.org/shiftkeyllc/ios-coding-challenge/src/master/API-DOC.md) with an address of "Dallas, TX"
-* On app launch, the current week of shifts should be fetched and displayed, starting with today's date
-* Scrolling to the end of the current week on the list loads shifts for the next week
-* Tapping on a shift cell should present a shift details screen with shift details
-* Use of 3rd party libraries is allowed. But, be thoughtful about which libraries are used and why
+* Written in Kotlin - DONE
+* Fetches available shifts using the [Available Shifts API](https://bitbucket.org/shiftkeyllc/ios-coding-challenge/src/master/API-DOC.md) with an address of "Dallas, TX"  - DONE
+* On app launch, the current week of shifts should be fetched and displayed, starting with today's date  - DONE
+* Scrolling to the end of the current week on the list loads shifts for the next week  - NOT DONE
+* Tapping on a shift cell should present a shift details screen with shift details  - DONE
+* Use of 3rd party libraries is allowed. But, be thoughtful about which libraries are used and why  - DONE
 
 ### What are we looking for? ###
 

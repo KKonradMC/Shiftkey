@@ -28,6 +28,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 
 }
@@ -37,12 +40,19 @@ dependencies {
             project(":domain"),
             deps.kotlin,
             deps.hilt,
+            deps.rxjava,
+    )
+    api(
+            deps.retrofit,
+            deps.adapter_rxjava2,
+            deps.converter_gson,
     )
     kapt(
             deps.hilt_compiler,
     )
     testImplementation(
             deps.tests.junit,
+            deps.tests.mockito_core,
     )
     androidTestImplementation(
             deps.tests.junit_ext,

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start_date">Start date:</string>
+    <string name="end_date">End date:</string>
+    <string name="premium_rate">Premium rate</string>
+    <string name="covid">COVID</string>
+    <string name="id">Id: %d</string>
+    <string name="shift">Shift</string>
+    <string name="facility_type">Facility type</string>
+    <string name="skill">Skill</string>
+    <string name="localization">Localization</string>
+</resources>

@@ -1,6 +1,6 @@
 def sdk = [:]
 sdk.compile = 30
-sdk.min = 23
+sdk.min = 24
 sdk.target = 30
 ext.sdk = sdk
 
@@ -37,14 +37,41 @@ classpath.hilt = "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
 deps.hilt = "com.google.dagger:hilt-android:$versions.hilt"
 deps.hilt_compiler = "com.google.dagger:hilt-android-compiler:$versions.hilt"
 
+//retrofit
+versions.retrofit = '2.9.0'
+deps.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+deps.converter_gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+deps.adapter_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+
+//okhttp3
+versions.okhttp3 = '4.9.1'
+deps.okhttp3 = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3"
+
+//rxkotlin
+versions.rxjava = '2.2.21'
+versions.rxandroid = '2.1.1'
+versions.rxkotlin = '2.4.0'
+deps.rxjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.rxkotlin = "io.reactivex.rxjava2:rxkotlin:$versions.rxkotlin"
+
+
+//navigation
+versions.navigation = "2.3.0"
+deps.navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+deps.navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+classpath.navigation_safe_args_gradle_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+
 //tests
 versions.junit = "4.12"
 versions.junit_ext = "1.1.2"
 versions.espresso = "3.3.0"
+versions.mockito_core = "1.10.19"
 
 deps.tests.junit = "junit:junit:$versions.junit"
 deps.tests.junit_ext = "androidx.test.ext:junit:$versions.junit_ext"
 deps.tests.espresso = "androidx.test.espresso:espresso-core:$versions.espresso"
+deps.tests.mockito_core = "org.mockito:mockito-core:$versions.mockito_core"
 
 
 ext.deps = deps
